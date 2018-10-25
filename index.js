@@ -51,8 +51,8 @@ app.post("/login",(req,res)=>{
             res.send("{login:false}"); }
      })
 })
-
-app.listen(3001,()=>{
+const port = process.env.PORT || 3000;
+app.listen(port,()=>{
     console.log("listening..!")
 })
 
