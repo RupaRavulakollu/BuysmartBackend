@@ -41,14 +41,15 @@ app.post("/login",(req,res)=>{
          if(error){
              return res.json({"error":error});
          }
-         console.log("in");
-         if(user){ 
+         //console.log(user);
+         if(user.length>0){ 
              console.log("user "+user)
-             res.send("{login:true}");
+             res.json({login:true});
             }
          else{
              console.log("not user"+user)
-            res.send("{login:false}"); }
+            res.json({login:false});
+         }
      })
 })
 const port = process.env.PORT || 3000;
